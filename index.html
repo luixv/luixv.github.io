@@ -69,7 +69,13 @@
 
     .menu a:hover { color: var(--ink); }
 
-     align-items: start;
+    .hero {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 2rem;
+      padding: 2rem 0 1rem;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
     }
 
     .cover {
@@ -77,7 +83,22 @@
       min-height: 420px;
       aspect-ratio: 4 / 5;
       border: 1px solid var(--line);
-.cover-label {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cover::before {
+      content: "";
+      position: absolute;
+      inset: 1rem;
+      border: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .cover-label {
       position: absolute;
       top: 1rem;
       left: 1rem;
@@ -119,7 +140,15 @@
     h1 {
       margin: 0;
       font-size: clamp(2.8rem, 6vw, 5.5rem);
-      line-height: 0.94x-width: 34ch;
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      font-weight: 700;
+    }
+
+    .lead {
+      font-size: 1.18rem;
+      color: #2a2825;
+      max-width: 34ch;
       margin: 1rem 0 0;
     }
 
@@ -171,7 +200,14 @@
       color: var(--paper);
     }
 
-    .btn.primary:hov
+    .btn.primary:hover {
+      background: #000;
+    }
+
+    .btn.secondary:hover {
+      background: rgba(0,0,0,0.04);
+    }
+
     section {
       padding: 2rem 0;
       border-bottom: 1px solid var(--line);
@@ -281,7 +317,15 @@
     }
     }
   </style>
-</head>yectoria">Trayectoria</a>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap topbar-inner">
+      <a class="brand" href="#inicio">Luis Mandel</a>
+      <nav class="menu">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#libro">Libro</a>
+        <a href="#trayectoria">Trayectoria</a>
         <a href="#contacto">Contacto</a>
       </nav>
     </div>
@@ -294,7 +338,13 @@
         <div class="cover-title">Luis<br>Mandel</div>
       </div>
 
-      <div class="hero-sidedisciplinaria y una práctica sostenida de escritura centrada en la memoria,
+      <div class="hero-side">
+        <div>
+          <div class="kicker">Informática y escritura</div>
+          <h1>Una vida entre el software y los relatos</h1>
+          <p class="lead">
+            Doctor en Informática y escritor argentino. Mi recorrido reúne años de desarrollo de software,
+            investigación interdisciplinaria y una práctica sostenida de escritura centrada en la memoria,
             la experiencia personal y los cruces entre lo íntimo y lo colectivo.
           </p>
 
@@ -400,7 +450,7 @@
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/dr-luis-mandel-3369651/" target="_blank" rel="noreferrer">LinkedIn</a>
         <a href="https://editorial.orsai.org/libros/historia-de-una-falsificacion/" target="_blank" rel="noreferrer">Libro</a>
-        <a href="mailto:luis@mandel.pro">luis@mandel.pro</a> plimp
+        <a href="mailto:luis@mandel.pro">luis@mandel.pro</a>
       </div>
     </footer>
   </main>
