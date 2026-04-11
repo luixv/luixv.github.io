@@ -116,8 +116,24 @@ main {
 .hero {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
+  gap: 2rem;
   padding: 3rem 0 2.5rem;
   border-bottom: 1px solid var(--line);
+}
+
+.hero-media {
+  display: flex;
+  align-items: flex-start;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 50% 24%;
+  border: 1px solid rgba(23, 21, 18, 0.12);
+  box-shadow: 0 18px 40px rgba(45, 32, 18, 0.18);
 }
 
 .hero-copy {
@@ -358,6 +374,14 @@ section {
     grid-column: auto;
   }
 
+  .hero-media {
+    order: -1;
+  }
+
+  .hero-image {
+    max-width: 360px;
+  }
+
   h1,
   .section-body h2,
   .lead {
@@ -382,6 +406,11 @@ section {
 
   .hero {
     padding-top: 2rem;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    aspect-ratio: auto;
   }
 
   .hero-meta {
