@@ -346,6 +346,24 @@ section {
   color: #2c2621;
 }
 
+.section-photo {
+  margin-top: 0.75rem;
+}
+
+.section-photo-image {
+  width: 100%;
+  border: 1px solid rgba(23, 21, 18, 0.12);
+  box-shadow: 0 18px 40px rgba(45, 32, 18, 0.12);
+}
+
+.section-photo-caption {
+  margin-top: 0.7rem;
+  color: var(--muted);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
 .footer {
   display: flex;
   justify-content: space-between;
