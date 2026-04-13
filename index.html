@@ -161,6 +161,15 @@
                 <li>UML y modelado de aplicaciones web</li>
                 <li>Sistemas hipermedia y multimedia</li>
               </ul>
+              <p class="stacked-paragraph">
+                <a
+                  href="https://independent.academia.edu/LuisMandel"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Ver perfil en Academia.edu
+                </a>
+              </p>
             </article>
           </div>
 
@@ -317,13 +326,33 @@
     <div>&copy; <span id="year"></span> Luis Mandel</div>
     <div class="footer-links">
       <a href="https://www.linkedin.com/in/dr-luis-mandel-3369651/" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a href="https://independent.academia.edu/LuisMandel" target="_blank" rel="noreferrer">Academia.edu</a>
       <a href="https://editorial.orsai.org/libros/historia-de-una-falsificacion/" target="_blank" rel="noreferrer">Libro</a>
-      <a href="mailto:luis@mandel.pro">luis@mandel.pro</a>
+      <button type="button" id="contact-reveal" class="contact-reveal" aria-expanded="false">
+        Mostrar correo
+      </button>
+      <a href="#" id="contact-email" hidden aria-hidden="true"></a>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const contactReveal = document.getElementById("contact-reveal");
+    const contactEmail = document.getElementById("contact-email");
+
+    contactReveal.addEventListener("click", () => {
+      const user = "luis";
+      const host = "mandel.pro";
+      const address = `${user}@${host}`;
+
+      contactEmail.href = `mailto:${address}`;
+      contactEmail.textContent = address;
+      contactEmail.hidden = false;
+      contactEmail.setAttribute("aria-hidden", "false");
+      contactReveal.setAttribute("aria-expanded", "true");
+      contactReveal.hidden = true;
+    });
   </script>
 </body>
 </html>
